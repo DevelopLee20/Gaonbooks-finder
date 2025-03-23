@@ -93,7 +93,7 @@ def search(event=None):
         return
 
     # "₩ {인덱스 번호}" 형식으로 입력한 경우
-    if user_input.startswith("₩"):
+    if user_input.startswith("₩") or user_input.startswith("`"):
         try:
             index_number = int(user_input[2:].strip()) - 1  # 1부터 시작하는 인덱스를 0부터 시작하도록 조정
             if last_filtered_df is not None and 0 <= index_number < len(last_filtered_df):
