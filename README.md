@@ -12,7 +12,7 @@
 | test | 테스트 코드 작성 |
 | chore | 빌드 수정, 패키지 업데이트 |
 | perf | 성능 개선 |
-| build | 빌드 관련 수정(docker) |
+| build | 빌드 관련 수정(docker, poetry) |
 | ci | CI 설정(Github Action) |
 | revert | 이전 커밋 되돌리기 |
 | hotfix | 버그 처리 후 배포시 사용 |
@@ -20,7 +20,6 @@
 ## 풀스택 웹개발 계획
 
 [참고자료](https://github.com/fastapi/full-stack-fastapi-template)
-
 
 ### 1. 백엔드 개발(테스트 코드 작성 필수)
 
