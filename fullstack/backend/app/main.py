@@ -1,8 +1,6 @@
-from fastapi import FastAPI
 import psutil
-import sys
-import os
 from app.books_init import Books
+from fastapi import FastAPI
 
 # init
 books = Books()
@@ -14,6 +12,7 @@ excel_file_name = books.get_excel_file_name()
 app = FastAPI(
     title="Gaonbooks",
 )
+
 
 @app.get("/")
 async def default_page():

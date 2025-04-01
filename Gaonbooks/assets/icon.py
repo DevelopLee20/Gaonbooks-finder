@@ -1,5 +1,6 @@
-from PIL import Image
 import os
+
+from PIL import Image
 
 # 원본 이미지 경로
 source_image = "icon.png"
@@ -19,7 +20,7 @@ sizes = [
     (256, "icon_256x256.png"),
     (512, "icon_256x256@2x.png"),
     (512, "icon_512x512.png"),
-    (1024, "icon_512x512@2x.png")
+    (1024, "icon_512x512@2x.png"),
 ]
 
 # 이미지 리사이즈 후 저장
