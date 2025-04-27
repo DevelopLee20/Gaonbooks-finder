@@ -48,12 +48,3 @@ class Books:
         dataframe["주문월일"] = df["주문"]
         dataframe["주문경과일"] = df["D-일수"]
         self.dataframe = dataframe
-
-    def get_soldout_list(self):
-        return self.soldout_list
-
-    def get_dataframe(self):
-        return self.dataframe
-
-    def get_excel_file_name(self):
-        return self.latest_file
