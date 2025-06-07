@@ -1,5 +1,6 @@
+import socket
+
 import numpy as np
-import psutil
 from app.books_init import Books
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
@@ -17,16 +18,14 @@ app = FastAPI(
 templates = Jinja2Templates(directory="app/templates")
 
 # 정적 파일 제공 (CSS, JS 등)
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+# app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.mount("/assets", StaticFiles(directory="app/assets"), name="assets")
 
 # 주소 반환
-for _, snics in psutil.net_if_addrs().items():
-    for snic in snics:
-        if snic.family.name == "AF_INET" and not snic.address.startswith("127."):
-            print(
-                f"address: http://{snic.address}:8000\nfile_name: {books.latest_file}"
-            )
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+print(f"http://{local_ip}:8000")
+print(books.latest_file)
 
 
 def get_title_img(title: str) -> str:
