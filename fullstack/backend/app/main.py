@@ -37,7 +37,7 @@ async def find_page():
     return templates.TemplateResponse("find.html", {"request": {}})
 
 
-@app.get("/find/{input_book_name}/")
+@app.get("/api/find/{input_book_name}/")
 async def find_book(input_book_name: str):
     user_input = input_book_name.strip()
     if user_input == "":
